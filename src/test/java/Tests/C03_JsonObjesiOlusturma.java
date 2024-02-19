@@ -1,3 +1,5 @@
+package Tests;
+
 import org.json.JSONObject;
 import org.testng.annotations.Test;
 
