@@ -16,7 +16,7 @@ public class C17_BaseUrlHerOkuAppQueryParam2 extends BaseUrlHerokuapp {
         "firstname" degeri "Sally"
         ve "lastname" degeri "Jackson" olan
     rezervasyon oldugunu test edecek bir GET request gonderdigimizde,
-    donen response'un
+        donen response'un
         status code'unun 200 oldugunu
         ve "Sally Jackson" ismine sahip en az bir booking oldugunu test edin
  */
@@ -24,14 +24,18 @@ public class C17_BaseUrlHerOkuAppQueryParam2 extends BaseUrlHerokuapp {
 
      @Test
     public void queryParams(){
-
+         //1-End-point hazirlama ve Request body olusturma
          specHerokuapp.pathParam("pp1","booking").queryParams("firstname","Sally","lastname","Jackson");
+         //2-Expected body hazirlama
 
+         //3-Request gönderip, dönen response'i kaydetme
          Response response=given().when().spec(specHerokuapp)
-                           .get("/{pp1}");
+                           .get("{pp1}");//query parametreleri gonderilmiyor
+         //response.prettyPrint();
 
+         //4-Assertion
          response.then().assertThat().statusCode(200)
-                 .body("bookingid", Matchers.hasSize(1));
+                 .body("bookingid", Matchers.hasSize(1));//body icindeki herhangi bir key'den test yapilabilir
 
 
 

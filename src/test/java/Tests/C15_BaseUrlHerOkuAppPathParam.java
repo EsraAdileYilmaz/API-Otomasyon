@@ -1,6 +1,7 @@
 package Tests;
 
 import BaseUrl.BaseUrlHerokuapp;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import org.junit.Test;
@@ -13,7 +14,7 @@ public class C15_BaseUrlHerOkuAppPathParam extends BaseUrlHerokuapp {
     //    bir GET request gonderdigimizde
     //    donen response'un
     //   status code'unun 200 oldugunu
-    //   ve Response'ta 12 booking oldugunu test edin
+    //   ve "bookingid" si 258 olan rezervasyonun var oldugunu test edin
 
     @Test
     public void test01(){
@@ -24,10 +25,14 @@ public class C15_BaseUrlHerOkuAppPathParam extends BaseUrlHerokuapp {
 
        //3-Request gönderip, dönen response'i kaydetme
         Response response=given().when().spec(specHerokuapp).get("/{pp1}");
+        response.prettyPrint();
 
       //4-Assertion
+        JsonPath responseJsonPath=response.jsonPath();//response'dan donen bilgileri kolay elde etmek icin jsonpath e cast ediyoruz
+        System.out.println(responseJsonPath.getList("bookingid").size());//burasi bize donen listenin uzunlugunu verir
+
         response.then().assertThat().statusCode(200)
-                .body("bookingid", Matchers.hasItem(51));
+                .body("bookingid", Matchers.hasItem(258));
         //bu assertion cesidi junit ile calisiyor.buyuzden @Test annotation junitten secilmeli.
     }
 

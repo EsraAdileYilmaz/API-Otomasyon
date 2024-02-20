@@ -53,7 +53,10 @@ public class C13_Get_SoftAssertIleExpectedDataTesti {
         Response response=given().when().get(url);
 
         //4-Assertion
+        //Oncelikle response uzerindeki bilgileri kolay almak icin response'i JsonPath'e cast edelim
         JsonPath responseJsonPath=response.jsonPath();//Gelen cevabi yani response'i JsonPath e cast ediyoruz
+        //response'dan gelen bizim actual data'mizi olusturuyor.
+        //bizim olusturdugumuz ise expected data oluyor.
 
         SoftAssert softAssert=new SoftAssert();
         softAssert.assertEquals(responseJsonPath.get("status"),expectedBody.get("status"));
@@ -64,7 +67,7 @@ public class C13_Get_SoftAssertIleExpectedDataTesti {
         softAssert.assertEquals(responseJsonPath.get("data.profile_image"),expectedBody.getJSONObject("data").get("profile_image"));
         softAssert.assertEquals(responseJsonPath.get("message"),expectedBody.get("message"));
 
-        softAssert.assertAll();
+        softAssert.assertAll();//burayi yazmazsak assertion gerceklesmez ve raporlama olmaz
 
 
 

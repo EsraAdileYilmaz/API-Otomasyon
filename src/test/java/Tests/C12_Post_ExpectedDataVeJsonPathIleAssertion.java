@@ -78,6 +78,8 @@ public class C12_Post_ExpectedDataVeJsonPathIleAssertion {
         response.prettyPrint();
         //4-Assertion ==>
         JsonPath responseJsonPath=response.jsonPath();//burda ONCELIKLE response objeyi json path formatina cevirdik
+        //ilk yazilan expected==> olusturdugumuz JSONObject expectedData dan gelicek
+        //ikinci yazilan actual==>response'dan gelicek ve oda responseJsonPath formatinda gelicek
 
         assertEquals(expectedData.getJSONObject("booking").get("firstname"),responseJsonPath.get("booking.firstname"));
         assertEquals(expectedData.getJSONObject("booking").get("lastname"),responseJsonPath.get("booking.lastname"));
@@ -89,10 +91,5 @@ public class C12_Post_ExpectedDataVeJsonPathIleAssertion {
 
 
     }
-
-
-
-
-
 
 }
