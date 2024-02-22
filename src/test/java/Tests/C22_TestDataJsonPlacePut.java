@@ -56,7 +56,7 @@ public class C22_TestDataJsonPlacePut extends BaseUrlJsonPlaceholder {
         JsonPath responseJsonpath=response.jsonPath();//response bilgileri kolay alinsin diye response'i jsonpath'e cast ettik.
 
         assertEquals(JsonPlaceDatas.basariliStatusCode,response.getStatusCode());
-        assertEquals(JsonPlaceDatas.contentType,response.contentType());
+        assertEquals(JsonPlaceDatas.contentType,response.getContentType());
         assertEquals(JsonPlaceDatas.header,response.getHeader("Connection"));
         assertEquals(expectedBody.getInt("userId"),responseJsonpath.getInt("userId"));
         assertEquals(expectedBody.getInt("id"),responseJsonpath.getInt("id"));

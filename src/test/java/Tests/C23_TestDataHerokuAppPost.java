@@ -54,10 +54,10 @@ public class C23_TestDataHerokuAppPost extends BaseUrlHerokuapp{
     public void test01(){
         //1-End-point hazirlama ve Request body olusturma
         specHerokuapp.pathParam("pp1","booking");
+        JSONObject requestBody= HerokuappDatas.jsonHerokuappRequestBodyOlustur();
 
         //2-Expected body hazirla
         //request body olusturmaliyiz
-        JSONObject requestBody= HerokuappDatas.jsonHerokuappRequestBodyOlustur();
         JSONObject expectedBody=HerokuappDatas.jsonexpectedBodyOlustur();
 
         //3-Request gönderip, dönen response'i kaydetme
@@ -67,6 +67,7 @@ public class C23_TestDataHerokuAppPost extends BaseUrlHerokuapp{
 
         //4)Assertion
         JsonPath responseJsonpath=response.jsonPath();
+
         assertEquals(expectedBody.getJSONObject("booking").get("firstname"),
                      responseJsonpath.get("booking.firstname"));
         assertEquals(expectedBody.getJSONObject("booking").get("lastname"),
@@ -82,7 +83,22 @@ public class C23_TestDataHerokuAppPost extends BaseUrlHerokuapp{
         assertEquals(expectedBody.getJSONObject("booking").getJSONObject("bookingdates").get("checkout"),
                      responseJsonpath.get("booking.bookingdates.checkout"));
 
-
+        /*
+        assertEquals(expectedBody.getJSONObject("booking").getString("firstname"),
+                     responseJsonpath.getString("booking.firstname"));
+        assertEquals(expectedBody.getJSONObject("booking").getString("lastname"),
+                     responseJsonpath.getString("booking.lastname"));
+        assertEquals(expectedBody.getJSONObject("booking").getInt("totalprice"),
+                     responseJsonpath.getInt("booking.totalprice"));
+        assertEquals(expectedBody.getJSONObject("booking").getBoolean("depositpaid"),
+                     responseJsonpath.getBoolean("booking.depositpaid"));
+        assertEquals(expectedBody.getJSONObject("booking").getString("additionalneeds"),
+                     responseJsonpath.getString("booking.additionalneeds"));
+        assertEquals(expectedBody.getJSONObject("booking").getJSONObject("bookingdates").getString("checkin"),
+                     responseJsonpath.getString("booking.bookingdates.checkin"));
+        assertEquals(expectedBody.getJSONObject("booking").getJSONObject("bookingdates").getString("checkout"),
+                     responseJsonpath.getString("booking.bookingdates.checkout"));
+         */
     }
 
 
