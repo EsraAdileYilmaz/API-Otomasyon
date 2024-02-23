@@ -76,7 +76,4 @@ public class C26_DeSerializationGet extends BaseUrlDummy{
 
     }
 
-
-
-
 }

@@ -85,5 +85,17 @@ public class C27_DeSerializationPost extends BaseUrlHerokuapp {
                 ((Map) responseMap.get("booking")).get("additionalneeds"));
 
 
+
+        /*API Interview sorulari=
+        1-I am using the get request and getting security number,
+        how do you check that security number is correct or wrong? cevap assertion yapariz
+        2-API testine neden ihtiyac duyariz?
+        Iletisimin dogru olup olmadigini kontrol etmek icin.verilerin dogrulugu,guvenlik aciklarinin olusmamasi,
+        sistemin devamliliginin saglanmasi,performans kontrolu icin(olculebilir bir performansi olculur)
+        3-API testi yaparken ihtiyac duydugumuz temel bilesenler nelerdir?
+        API-swagger(open API) dokumani,endpoint,http methodlari,
+        request-response,kimliklendirmeye ihtiyacimiz var
+         */
+
     }
 }

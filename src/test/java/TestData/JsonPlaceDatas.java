@@ -10,6 +10,8 @@ public class JsonPlaceDatas {
     public static  int basariliStatusCode=200;
     public static String contentType="application/json; charset=utf-8";
     public static  String header="keep-alive";
+    public static String header2="cloudflare";
+    public static String statusLine="HTTP/1.1 200 OK";
 
     public static JSONObject expectedDataOlustur22(){
 
@@ -55,8 +57,5 @@ public class JsonPlaceDatas {
 
        return bodyMap;
     }
-
-
-
 
 }

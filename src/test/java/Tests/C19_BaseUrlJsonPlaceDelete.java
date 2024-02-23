@@ -24,8 +24,8 @@ public class C19_BaseUrlJsonPlaceDelete extends BaseUrlJsonPlaceholder{
 
         //3-Request gönderip, dönen response'i kaydetme
         Response response=given()
-                .when().spec(specJsonPlaceholder)
-                .delete("{pp1}/{pp2}");
+                          .when().spec(specJsonPlaceholder)
+                          .delete("{pp1}/{pp2}");
 
         //4-Assertion
         response.then().assertThat()

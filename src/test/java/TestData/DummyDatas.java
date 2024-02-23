@@ -71,6 +71,55 @@ public class DummyDatas {
 
         return bodyMap;
     }
+   /* Request Body
+    {
+        "status":"success",
+            "data":{
+                "name":"Ahmet",
+                "salary":"1230",
+                "age":"44",
+                "id":40
+    }
+    }
+    */
+    public static JSONObject requestBodyOlustur(){
 
+        JSONObject requestBody=new JSONObject();
+        JSONObject data=new JSONObject();
+        data.put("name","Ahmet");
+        data.put("salary","1230");
+        data.put("age","44");
+        data.put("id",40);
+
+        requestBody.put("status","success");
+        requestBody.put("data",data);
+
+        return requestBody;
+
+    }
+    /*
+     Response Body
+        {
+        "status":"success",
+        "data":{
+            "status":"success",
+            "data":{
+                    "name":"Ahmet",
+                    "salary":"1230",
+                    "age":"44",
+                    "id":40
+                    }
+               },
+        "message":"Successfully! Record has been updated."
+        }
+     */
+    public static JSONObject responseBodyOlustur(){
+        JSONObject responseBody=new JSONObject();
+        responseBody.put("status","success");
+        responseBody.put("data",requestBodyOlustur());
+        responseBody.put("message","Successfully! Record has been updated.");
+
+        return responseBody;
+    }
 
 }
