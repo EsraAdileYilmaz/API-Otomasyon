@@ -17,7 +17,7 @@ public class PojoJsonPlaceholder {
       private int id;
 
 
-    // 2- tum variable'lar icin getter ve setter metodlari olusturalim
+    // 2- tum variable'lar icin getter and setter metodlari olusturalim
 
     public String getTitle() {
         return title;
@@ -68,8 +68,6 @@ public class PojoJsonPlaceholder {
     }
 
     // 5- toString metodu olusturalim
-
-
     @Override
     public String toString() {
         return "PojoJsonPlaceholder{" +
@@ -79,6 +77,11 @@ public class PojoJsonPlaceholder {
                 ", id=" + id +
                 '}';
     }
+    // 1- tum variable'lari private olarak olustur
+    // 2- tum variable'lar icin getter and setter metodlari olusturalim
+    // 3- tum parametreleri kullanarak bir constructor olusturalim
+    // 4- default constructor yerine manuel olarak parametresiz bir constructor olusturalim
+    // 5- toString metodu olusturalim
 
 
 }

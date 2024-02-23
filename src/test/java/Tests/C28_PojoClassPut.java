@@ -47,6 +47,7 @@ public class C28_PojoClassPut extends BaseUrlJsonPlaceholder {
 
         //2-Expected body hazirlama
         PojoJsonPlaceholder expectedBodyPojo=new PojoJsonPlaceholder("Ahmet","Merhaba",10,70);
+        //request body ve expected body ayni formatta oldugu icin ayni pojo class'indan hazirladik
 
         //3-Request gönderip, dönen response'i kaydetme
         Response response=given().spec(specJsonPlaceholder).contentType(ContentType.JSON)
