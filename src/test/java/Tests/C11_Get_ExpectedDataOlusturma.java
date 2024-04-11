@@ -16,7 +16,7 @@ public class C11_Get_ExpectedDataOlusturma {
     bir GET request yolladigimizda
     donen response body'sinin asagida verilen ile ayni oldugunu test ediniz
 
-    Response body :
+    Response body :(Expected body)
 
     {
     "userId":3,
@@ -43,19 +43,15 @@ public class C11_Get_ExpectedDataOlusturma {
         Response response=given().when().get(url);
 
         //4-Assertion
-
         JsonPath responseJsonpath=response.jsonPath();//burda cevabi json objesine cevirdik
         assertEquals(expectedBody.get("userId"),responseJsonpath.get("userId"));
         assertEquals(expectedBody.get("id"),responseJsonpath.get("id"));
         assertEquals(expectedBody.get("title"),responseJsonpath.get("title"));
         assertEquals(expectedBody.get("body"),responseJsonpath.get("body"));
-        //json obje ile json path'i karsilastirmis oluyoruz.Ama formatlari ayni.formatlar uzerinden karsilastirma yapiyoruz
+        //json obje ile json path'i karsilastirmis oluyoruz.Ama formatlari ayni.Formatlar uzerinden karsilastirma yapiyoruz
 
 
 
     }
-
-
-
 
 }

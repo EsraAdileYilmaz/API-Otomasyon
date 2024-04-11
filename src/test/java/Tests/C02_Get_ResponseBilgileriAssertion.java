@@ -25,6 +25,7 @@ public class C02_Get_ResponseBilgileriAssertion {
 
         //3- Request gönderip, dönen response'i kaydetme
         Response response=given().when().get(url);
+        //Burdaki given() driver() gorevi gorur.
 
 
         //4- Assertion

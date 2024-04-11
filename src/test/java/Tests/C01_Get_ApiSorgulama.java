@@ -19,7 +19,7 @@ public class C01_Get_ApiSorgulama {
      */
 
     /*
-    API testlerinde genlede islemler 4 asamada gerceklesir
+    API testlerinde genelde islemler 4 asamada gerceklesir
     1- End-point hazirlama ve Request body olusturma
     2- Expected Data hazirlama
     3- Request gönderip, dönen response'i kaydetme
@@ -39,13 +39,15 @@ public class C01_Get_ApiSorgulama {
         //burada id'si 10 olan rezervasyonu getirdik ve icindeki bilgilerini response objesine kaydettik
 
         //response.prettyPrint();
-        // 4-Assertin islemi yapilir
+
         System.out.println("Status code: "+response.getStatusCode()+
                             "\nContent type: "+response.getContentType()+
                              "\nStatus Line: "+response.getStatusLine()+
                              "\nServer Header degeri: "+response.getHeader("Server")+
                              "\nResponse suresi: "+response.getTime()+"ms");
         //yukardakilerle donen response icindeki  bilgileri goruntuledik.
+
+        // 4-Assertion islemi yapilir
 
 
     }

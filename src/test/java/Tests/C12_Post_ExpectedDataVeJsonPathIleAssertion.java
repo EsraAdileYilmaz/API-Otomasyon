@@ -15,9 +15,9 @@ public class C12_Post_ExpectedDataVeJsonPathIleAssertion {
     /*
         https://restful-booker.herokuapp.com/booking url'ine
         asagidaki body'ye sahip bir POST request gonderdigimizde
-        donen response'un bookindid haric asagidaki gibi oldugunu test edin.
+        donen response'un bookingid haric asagidaki gibi oldugunu test edin.
 
-        Request body
+        Request body ==Bizim olusturdugumuz body
         {
         "firstname" : "Hasan",
         "lastname" : "Yagmur",
@@ -30,7 +30,7 @@ public class C12_Post_ExpectedDataVeJsonPathIleAssertion {
         "additionalneeds" : "wi-fi"
         }
 
-        Expected Response Body
+        Response body ==(Expected body)
         {
         "bookingid":24,
         "booking":{
@@ -57,7 +57,7 @@ public class C12_Post_ExpectedDataVeJsonPathIleAssertion {
         bookingDates.put("checkin","2021-06-01");
         bookingDates.put("checkout","2021-06-10");
 
-        JSONObject requestBody=new JSONObject();
+        JSONObject requestBody=new JSONObject();//Boyle bir body olusturulmasini istiyorum,yeni rezervasyon
         requestBody.put("firstname","Hasan");
         requestBody.put("lastname","Yagmur");
         requestBody.put("totalprice",500);
@@ -67,19 +67,22 @@ public class C12_Post_ExpectedDataVeJsonPathIleAssertion {
 
         //2-Expected body hazirla
         //expected response body olusturuyoruz
-        JSONObject expectedData=new JSONObject();
+        JSONObject expectedData=new JSONObject();//Bizim bekledigimiz data
         expectedData.put("bookingid",24);
         expectedData.put("booking",requestBody);
+        //System.out.println(expectedData);
 
         //3-Request gönderip, dönen response'i kaydetme
         Response response=given().contentType(ContentType.JSON)
                           .when().body(requestBody.toString())
                           .post(url);
-        response.prettyPrint();
+        //response.prettyPrint();//Bize donen data
+
         //4-Assertion ==>
-        JsonPath responseJsonPath=response.jsonPath();//burda ONCELIKLE response objeyi json path formatina cevirdik
+        JsonPath responseJsonPath=response.jsonPath();//burda ONCELIKLE response objeyi jsonPath formatina cevirdik
         //ilk yazilan expected==> olusturdugumuz JSONObject expectedData dan gelicek
         //ikinci yazilan actual==>response'dan gelicek ve oda responseJsonPath formatinda gelicek
+        //Olusturdugumuz (expected body ile) body ile donen response body aynimi?
 
         assertEquals(expectedData.getJSONObject("booking").get("firstname"),responseJsonPath.get("booking.firstname"));
         assertEquals(expectedData.getJSONObject("booking").get("lastname"),responseJsonPath.get("booking.lastname"));
@@ -88,7 +91,6 @@ public class C12_Post_ExpectedDataVeJsonPathIleAssertion {
         assertEquals(expectedData.getJSONObject("booking").getJSONObject("bookingdates").get("checkin"),responseJsonPath.get("booking.bookingdates.checkin"));
         assertEquals(expectedData.getJSONObject("booking").getJSONObject("bookingdates").get("checkout"),responseJsonPath.get("booking.bookingdates.checkout"));
         assertEquals(expectedData.getJSONObject("booking").get("additionalneeds"),responseJsonPath.get("booking.additionalneeds"));
-
 
     }
 

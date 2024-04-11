@@ -25,7 +25,7 @@ public class C15_BaseUrlHerOkuAppPathParam extends BaseUrlHerokuapp {
 
        //3-Request gönderip, dönen response'i kaydetme
         Response response=given().when().spec(specHerokuapp).get("/{pp1}");
-        response.prettyPrint();
+        response.prettyPrint();//Donen response'u gormek icin
 
       //4-Assertion
         JsonPath responseJsonPath=response.jsonPath();//response'dan donen bilgileri kolay elde etmek icin jsonpath e cast ediyoruz
@@ -35,10 +35,5 @@ public class C15_BaseUrlHerOkuAppPathParam extends BaseUrlHerokuapp {
                 .body("bookingid", Matchers.hasItem(258));
         //bu assertion cesidi junit ile calisiyor.buyuzden @Test annotation junitten secilmeli.
     }
-
-
-
-
-
 
 }

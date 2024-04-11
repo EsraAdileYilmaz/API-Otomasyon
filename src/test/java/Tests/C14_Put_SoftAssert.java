@@ -26,7 +26,7 @@ public class C14_Put_SoftAssert extends BaseUrlDummy{
                    "id": 40
                        }
               }
-       Response Body
+       Response Body=Expected body
                {
                "status": "success",
                "data": {
@@ -59,7 +59,7 @@ public class C14_Put_SoftAssert extends BaseUrlDummy{
         requestBody.put("data",data);
 
         //2-Expected body hazirla
-        //Response body=expected body
+        //Response body=Expected body
         JSONObject expectedBody=new JSONObject();
         expectedBody.put("status", "success");
         expectedBody.put("data",requestBody);
