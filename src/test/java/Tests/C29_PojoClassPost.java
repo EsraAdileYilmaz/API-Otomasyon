@@ -30,7 +30,7 @@ public class C29_PojoClassPost extends BaseUrlHerokuapp {
                                       },
                     "additionalneeds" : "wi-fi"
                 }
-                   Response Body // expected data
+                   Response Body=Expected data
                 {
                 "bookingid":24,
                 "booking":{
@@ -44,7 +44,7 @@ public class C29_PojoClassPost extends BaseUrlHerokuapp {
                     ,
                     "additionalneeds":"wi-fi"
                 }
-      */
+          */
 
 
 

@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class HerokuappDatas {
     /*
-     {
+              {
                 "firstname" : "Ahmet",
                 "lastname" : "Bulut",
                 "totalprice" : 500,
@@ -36,20 +36,20 @@ public class HerokuappDatas {
         return requestBody;
     }
     /*Response body (=Expected body)
-    {
+       {
         "bookingid":24,
-            "booking":{
-        "firstname":"Ahmet",
+         "booking":{
+                "firstname":"Ahmet",
                 "lastname":"Bulut",
                 "totalprice":500,
                 "depositpaid":false,
                 "bookingdates":{
-            "checkin":"2021-06-01",
-                    "checkout":"2021-06-10"
-        },
-        "additionalneeds":"wi-fi"
-    }
-    }
+                     "checkin":"2021-06-01",
+                     "checkout":"2021-06-10"
+                      },
+                "additionalneeds":"wi-fi"
+               }
+        }
     */
     public static JSONObject jsonexpectedBodyOlustur(){
 
@@ -97,7 +97,7 @@ public class HerokuappDatas {
 
             return bookingdatesMap;
         }
-        /*
+         /*
          Response Body // expected data
                     {
                     "bookingid":24,

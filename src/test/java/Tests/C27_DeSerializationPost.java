@@ -62,8 +62,8 @@ public class C27_DeSerializationPost extends BaseUrlHerokuapp {
 
         //3-Request gönderip, dönen response'i kaydetme
         Response response = given().spec(specHerokuapp).contentType(ContentType.JSON)
-                .when().body(requestBodyMap)
-                .post("{pp1}");
+                            .when().body(requestBodyMap)
+                            .post("{pp1}");
         //response.prettyPrint();
         //4)Assertion
         //Oncelikle response'u Map'e cevirmeliyiz.
@@ -88,7 +88,10 @@ public class C27_DeSerializationPost extends BaseUrlHerokuapp {
 
         /*API Interview sorulari=
         1-I am using the get request and getting security number,
-        how do you check that security number is correct or wrong? cevap assertion yapariz
+        how do you check that security number is correct or wrong?
+        Ben bir get request kullaniyorum ve bana guvenlik numarasini getiriyor,
+        bu guvenlik numarasinin dogru veya yanlis oldugunu nasil kontrol ederim?
+        Cevap=Assertion yapariz
         2-API testine neden ihtiyac duyariz?
         Iletisimin dogru olup olmadigini kontrol etmek icin.verilerin dogrulugu,guvenlik aciklarinin olusmamasi,
         sistemin devamliliginin saglanmasi,performans kontrolu icin(olculebilir bir performansi olculur)

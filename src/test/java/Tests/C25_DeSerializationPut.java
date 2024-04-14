@@ -36,7 +36,7 @@ public class C25_DeSerializationPut extends BaseUrlJsonPlaceholder{
         "body":"Merhaba",
         "userId":10,
         "id":70
-    }
+     }
    */
     @Test
     public void test01(){
@@ -69,7 +69,7 @@ public class C25_DeSerializationPut extends BaseUrlJsonPlaceholder{
         /*
         request body: {id=70.0, title=Ahmet, body=Merhaba, userId=10.0}
         responseMap: {id=70.0, title=Ahmet, body=Merhaba, userId=10.0}
-        sayisal degerler double olarak dondugu icin bizimde bizde body olustururken sayisal degerleri double olarak girmeliyiz
+        sayisal degerler double olarak dondugu icin, bizde body olustururken sayisal degerleri double olarak girmeliyiz
          */
 
         // Map<String,Object> expectedDataMap <========>Map<String,Object> responseMap karsilastiracagiz

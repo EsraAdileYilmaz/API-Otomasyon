@@ -62,8 +62,8 @@ public class C23_TestDataHerokuAppPost extends BaseUrlHerokuapp{
 
         //3-Request gönderip, dönen response'i kaydetme
         Response response=given().contentType(ContentType.JSON)
-                .when().spec(specHerokuapp).body(requestBody.toString())
-                .post("{pp1}");
+                          .when().spec(specHerokuapp).body(requestBody.toString())
+                          .post("{pp1}");
 
         //4)Assertion
         JsonPath responseJsonpath=response.jsonPath();

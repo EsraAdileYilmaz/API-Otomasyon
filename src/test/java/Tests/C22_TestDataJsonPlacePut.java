@@ -43,8 +43,8 @@ public class C22_TestDataJsonPlacePut extends BaseUrlJsonPlaceholder {
 
         //2-Expected body hazirla
        //request body olusturmaliyiz
-        JSONObject requestBody= JsonPlaceDatas.jsonDataOlustur(10,70,"Ahmet","Merhaba");
-        JSONObject expectedBody=JsonPlaceDatas.jsonDataOlustur(10,70,"Ahmet","Merhaba");
+        JSONObject requestBody= JsonPlaceDatas.jsonDataOlustur(10,70,"Ahmet","Merhaba");//Gonderilen
+        JSONObject expectedBody=JsonPlaceDatas.jsonDataOlustur(10,70,"Ahmet","Merhaba");//Beklenen
         //expectedBody.put(); yapip yeni bir data ekleyebiliriz
 
         //3-Request gönderip, dönen response'i kaydetme

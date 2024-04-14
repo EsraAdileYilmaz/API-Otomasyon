@@ -77,6 +77,7 @@ public class C28_PojoClassPut extends BaseUrlJsonPlaceholder {
         assertEquals(JsonPlaceDatas.header,response.header("Connection"));
 
         //response body'sinin asagida verilen ile ayni oldugunu test ediniz
+        //getter() methodlarini kullanarak assertion yapiyoruz.
         assertEquals(expectedBodyPojo.getTitle(),responsePojo.getTitle());
         assertEquals(expectedBodyPojo.getBody(),responsePojo.getBody());
         assertEquals(expectedBodyPojo.getUserId(),responsePojo.getUserId());

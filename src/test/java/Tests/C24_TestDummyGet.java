@@ -19,7 +19,7 @@ public class C24_TestDummyGet extends BaseUrlDummy {
      content Type'inin application/json
      ve body'sinin asagidaki gibi oldugunu test edin.
 
-     Expected Response Body
+     Expected=Response Body
        {
         "status":"success",
         "data":{
@@ -63,7 +63,7 @@ public class C24_TestDummyGet extends BaseUrlDummy {
         assertEquals(expectedBody.get("message"),responseJsonPath.get("message"));
 
 
-        //Eger failed oldugunda statuscode=429 ise siteye asiri yuklenme var demektir
+        //Eger failed oldugunda statusCode=429 ise siteye asiri yuklenme var demektir
     }
 
 

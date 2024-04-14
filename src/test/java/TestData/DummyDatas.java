@@ -26,7 +26,7 @@ public class DummyDatas {
     public static String contentType="application/json";
 
     public static JSONObject expectedDataOlustur(int id,String employee_name,int employee_salary,int employee_age,String profile_image){
-        //Burada parametreleri vererek dinamik bir method hazirlmais oluyoruz
+        //Burada parametreleri vererek dinamik bir method hazirlamis oluyoruz
         JSONObject expectedData=new JSONObject();
         JSONObject data=new JSONObject();
         data.put( "id",id);
@@ -42,7 +42,7 @@ public class DummyDatas {
          return expectedData;
     }
     /*
-    Expected Response Body
+    Expected=Response Body
     {
         "status":"success",
         "data":{
@@ -72,15 +72,15 @@ public class DummyDatas {
         return bodyMap;
     }
    /* Request Body
-    {
-        "status":"success",
+          {
+            "status":"success",
             "data":{
                 "name":"Ahmet",
                 "salary":"1230",
                 "age":"44",
                 "id":40
-    }
-    }
+                   }
+           }
     */
     public static JSONObject requestBodyOlustur(){
 

@@ -36,7 +36,7 @@ public class C16_BaseUrlHerokuAppQueryParam1 extends BaseUrlHerokuapp {
 
         //4-Assertion
         response.then().assertThat().statusCode(200)
-                .body("bookingid",Matchers.hasItem(620));//burada degerler surekli degistigi icin bookingid'si 620 olani test ettik
+                .body("bookingid",Matchers.hasItem(620));//burada degerler surekli degistigi icin toplam bookingid'nin 620 olmasini test ettik
 
     }
 

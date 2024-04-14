@@ -21,8 +21,8 @@ public class C26_DeSerializationGet extends BaseUrlDummy{
      content Type’inin application/json
      ve body’sinin asagidaki gibi oldugunu test edin.
 
-    Expected Response Body
-    {
+    Expected=Response Body
+      {
         "status":"success",
         "data":{
                 "id":3,
@@ -32,7 +32,7 @@ public class C26_DeSerializationGet extends BaseUrlDummy{
                 "profile_image":""
                 },
         "message":"Successfully! Record has been fetched."
-    }
+      }
    */
 
     @Test

@@ -34,7 +34,7 @@ public class JsonPlaceDatas {
         expectedData.put("body",body);
 
         return expectedData;
-    }
+    }//Bu method dinamik
 
     /*
      Request Body
