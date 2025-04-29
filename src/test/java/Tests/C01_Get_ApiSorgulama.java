@@ -38,7 +38,7 @@ public class C01_Get_ApiSorgulama {
         Response response=given().when().get(url);
         //burada id'si 10 olan rezervasyonu getirdik ve icindeki bilgilerini response objesine kaydettik
 
-        //response.prettyPrint();
+        //response.prettyPrint();  Burasi bize donen response u yazdirir. "System.out.println" vazifesi gorur.
 
         System.out.println("Status code: "+response.getStatusCode()+
                             "\nContent type: "+response.getContentType()+
